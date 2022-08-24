@@ -1,0 +1,125 @@
+.header {
+  position: relative;
+  .navbar_logo {
+    width: 80px;
+    position: absolute;
+    top: 0;
+    left: 0%;
+  }
+  .header_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-5%);
+  }
+  .navbar {
+    .navbar-collapse {
+      padding-top: $sp-2;
+      padding-bottom: $sp-1;
+    }
+    @include extra-large {
+      .navbar-collapse{
+        position: absolute;
+        right: 10px;
+        top:90%;
+        background-color: $c-white-1;
+        z-index: 99;
+        width: 30%;
+        text-align: right;
+      }
+    }
+    .navbar-nav {
+      .nav-item {
+        position: relative;
+        padding-right: $sp-7;
+        .nav-link {
+          @include transition;
+          @include text($c-black-1, $fs-1, $fw-2);
+          &::after {
+            content: "";
+            display: none;
+            position: absolute;
+            z-index: 5;
+            bottom: -50%;
+            left: 25%;
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            background-color: $c-pink;
+            transform: scale(1.2);
+            @include transition;
+          }
+          &:hover {
+            color: $c-pink;
+            &::after {
+              display: block;
+              transform: scale(1.5);
+              @include transition;
+            }
+          }
+          @include extra-large {
+            &:hover {
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      .active {
+        .nav-link::after {
+          display: block;
+        }
+      }
+      @include extra-large {
+        .active {
+          display: none;
+        }
+      }
+    }
+
+    .nav-info {
+      .nav_button {
+        @include button($c-white, $c-pink, $sp-1 $sp-3, $c-pink, 0 0 0 3em $c-pink inset);
+        @include transition;
+        margin-right: $sp-5;
+        &:hover {
+          box-shadow: 0 0 0 1px $c-pink inset;
+        }
+      }
+      .nav-icons {
+        padding-top: $sp-2;
+        i {
+          @include icons($fs-1, $c-black-0, 0 $sp-0, $c-pink);
+        }
+      }
+      @include extra-large {
+        display: block !important;
+        .nav_button {
+          margin: 0;
+        }
+      }
+      @include large {
+        .nav_button {
+          font-size: $fs-0;
+        }
+      }
+      @include small {
+        .nav_button {
+          font-size: 7px;
+          padding: $sp-0 $sp-2;
+        }
+      }
+    }
+   
+  }
+  .nav-fixed {
+    width: 100%;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    padding-right: 80px;
+  }
+}

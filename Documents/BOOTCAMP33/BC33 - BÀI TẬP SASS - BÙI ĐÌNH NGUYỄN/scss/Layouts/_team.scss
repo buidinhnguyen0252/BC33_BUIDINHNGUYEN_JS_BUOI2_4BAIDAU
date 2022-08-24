@@ -1,0 +1,56 @@
+.team {
+    background-color: $c-white-2;
+    position: relative;
+    .cards {
+        border-radius: 15px;
+        background-color: $c-white-1;
+        margin-top: $sp-8;
+        @include transition;
+        z-index: 3;
+        position: relative;
+        &:hover {
+            box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
+        }
+        .team_img {
+            @include transition;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            overflow: hidden;
+            img {
+                transform: scale3d(1, 1, 1);
+            }
+            &:hover {
+                img {
+                    transition: all 0.8s ease-in-out;
+                    transform: scale3d(1.1, 1.1, 1.1);
+                }
+            }
+        }
+        .team_intro {
+            padding: $sp-4;
+            p:first-child {
+                @include text($c-pink, $fs-0 + 2, $fw-2);
+                margin-bottom: $sp-2;
+            }
+            h1 {
+                @include text($c-black-0, $fs-3, $fw-bold);
+            }
+            p:last-child {
+                @include text(c-black-0, $fs-1, $fw-normal);
+                line-height: 1.8;
+            }
+        }
+    }
+    .team_background {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        pointer-events: none;
+    }
+    @for $i from 1 to 9 {
+        .card-#{$i} {
+            animation-delay: 0.2s * $i;
+        }
+    }
+}

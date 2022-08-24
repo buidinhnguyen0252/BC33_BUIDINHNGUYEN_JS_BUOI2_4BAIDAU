@@ -1,0 +1,30 @@
+.carousel {
+    position: relative;
+    padding: 4em;
+    .carousel_text {
+        z-index: 2;
+        span {
+            @include text($c-pink, $fs-3 - 2, $fw-normal);
+        }
+        h1 {
+            @include text($c-black-0, 3.5rem, $fw-bold);
+            line-height: 1.3;
+        }
+        @include medium{
+            h1{
+                font-size: $fs-7;
+            }
+        }
+        @include small{
+            h1{
+                font-size: $fs-4;
+            }
+        }
+    }
+    .carousel_img{
+        position: absolute;
+        bottom:0;
+        left:0;
+
+    }
+}

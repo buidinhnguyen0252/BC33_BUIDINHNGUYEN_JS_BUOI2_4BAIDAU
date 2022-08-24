@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h2>
+        BÀI 5 : chương trình nhập vào ngày, tháng, năm . Tìm ngày, tháng, năm
+        của ngày tiếp theo. Tương tự tìm ngày tháng năm của ngày trước đó.
+      </h2>
+      <p>
+        INPUT : Nhập ngày tháng năm .
+        <br />
+        PROCESS:
+        <br />
+        -Tạo 3 biến date , month , year ( xét mặc định 1 tháng có 30 ngày )
+        <br />
+        - Xét điều kiện về ngày hôm qua : trường hợp tháng 1 ngày 1 và trường
+        hợp ngày 1
+        <br />
+        - Xét điều kiện về ngày mai : trường hợp tháng 12 ngày 30 và trường hợp
+        ngày 30
+        <br />
+        -Xuất ra ngày tháng năm của hôm qua và ngày mai
+        <br />
+        OUTPUT : xuất ra ngày tháng năm của hôm qua và ngày mai
+      </p>
+    </div>
+    <div>
+      <h2>
+        BÀI 6 : Viết chương trình nhập vào tháng, năm. Cho biết tháng đó có bao
+        nhiêu ngày. (bao gồm tháng của năm nhuận).
+      </h2>
+      <p>
+        INPUT : Nhập tháng năm .
+        <br />
+        PROCESS:
+        <br />
+        -Tạo 2 biến month , year
+        <br />
+        - Xét điều kiện về tháng 2 : năm nhuận sẽ có 2 trường hợp
+        <br />
+        +Chia hết cho 4 và không chia hết cho 100 --> 29 ngày
+        <br />
+        +Chia hết cho 400 --> 29 ngày
+        <br />
+        + Còn lại tháng 2 các năm sẽ có 28 ngày
+        <br />
+        - Xét điều kiện về các tháng 1 3 5 7 8 10 12 --> 30 ngày + các tháng còn
+        lại --> 31 ngày
+        <br />
+        -Xuất ra tháng năm đó có bao nhiêu ngày.
+        <br />
+        OUTPUT : xuất ra ngày tháng năm của hôm qua và ngày mai
+      </p>
+    </div>
+    <div>
+      <h2>
+        BÀI 7 : Viết Chương trình nhập vào số nguyên có 3 chữ số. In ra cách đọc
+        nó.
+      </h2>
+      <p>
+        INPUT : Nhập 1 số nguyên có 3 chữ số
+        <br />
+        PROCESS:
+        <br />
+        -Tạo 1 biến gán cho số nguyên(integer) và 3 biến tương ứng hàng trăm
+        (hundreds), hàng chục (dozens), hàng đơn vị (units)
+        <br />
+        - Gán 3 biến a b c lần lượt cho hàng trăm hàng chục hàng đơn vị
+        <br />
+        - Xét điều kiện từng hàng trăm , hàng chục và đơn vị ( VD : 3 xuất ra
+        "Ba" , 4 = "bốn")
+        <br />
+        -XUất 3 biến a,b,c
+        <br />
+        OUTPUT : xuất ra cách đọc số nguyên.
+      </p>
+    </div>
+    <div>
+      <h2>
+        BÀI 8 : Cho biết tên và tọa độ nhà của 3 sinh viên. Cho biết tọa độ của
+        trường đại học. Viết chương trình in tên sinh viên xa trường nhất. nó.
+      </h2>
+      <p>
+        INPUT : Nhập tên và tọa độ x y ứng với từng tên
+        <br />
+        PROCESS:
+        <br />
+        -Tạo 1 biến tính độ dài d = căn bâc hai ((x_school - x )*(x_school - x )
+        + (y_school - y)*(y_school - y) - trong đó x_school và y_school là tọa
+        độ của trường
+        <br />
+        - Tạo điều kiện so sánh giá trị d của từng sinh viên.
+        <br />
+        - Xuất ra length đoạn đường có giá trị lớn nhất
+        <br />
+        OUTPUT : xuất ra cách đọc số nguyên.
+      </p>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

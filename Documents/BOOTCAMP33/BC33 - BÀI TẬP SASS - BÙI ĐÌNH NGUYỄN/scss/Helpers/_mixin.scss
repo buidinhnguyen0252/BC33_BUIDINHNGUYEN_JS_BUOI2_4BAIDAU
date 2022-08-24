@@ -1,0 +1,84 @@
+@mixin text($color, $fs, $fw) {
+  color: $color;
+  font-size: $fs;
+  font-weight: $fw;
+}
+@mixin icons($fs, $color, $mg, $hover-color) {
+  font-size: $fs;
+  color: $color;
+  margin: $mg;
+  &:hover {
+    color: $hover-color;
+  }
+  cursor: pointer;
+  @include transition;
+}
+@mixin button($color, $bg-color, $pd, $hover-color, $box-shadow) {
+  color: $color;
+  background-color: $bg-color;
+  padding: $pd;
+  &:hover {
+    color: $hover-color;
+    background-color: transparent;
+  }
+  box-shadow: $box-shadow;
+  border-radius: 50px;
+}
+
+@mixin transition {
+  transition: all 0.3s ease;
+}
+@mixin focus-form {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+@mixin info-form($height, $pd, $border-radius) {
+  height: $height;
+  padding: $pd;
+  border-radius: $border-radius;
+  font-size: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  width: 100%;
+}
+
+@mixin myAnimation {
+  animation: myAnimate 0.8s ease;
+  transform: translateX(-100%);
+  opacity: 0;
+  animation-fill-mode: both;
+  @keyframes myAnimate {
+    0% {
+    }
+    100% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+}
+
+@mixin extra-large {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin medium{
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+
+@mixin small {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+

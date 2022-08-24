@@ -1,0 +1,115 @@
+.form {
+    position: relative;
+    padding-top: 4rem;
+    form {
+        background-color: $c-white-1;
+        border-radius: 10px;
+        box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        z-index: 3;
+        animation: Amination-form 1.5s ease-out 0s;
+        h1 {
+            @include text($c-black-0, $fs-6, $fw-bold);
+            margin-bottom: $sp-7;
+            margin-top: $sp-7;
+        }
+    }
+
+    .form-group {
+        .form-input {
+            position: relative;
+            margin-right: $sp-2;
+            i {
+                position: absolute;
+                top: 35%;
+                left: 10%;
+                color: $c-pink;
+                font-size: $fs-1;
+            }
+            input {
+                @include info-form(100%, $sp-2 $sp-5 $sp-2 $sp-8, 50px);
+                background: transparent;
+                &:focus {
+                    @include focus-form;
+                }
+            }
+        }
+        .form-select {
+            @extend .form-input;
+            i {
+                left: 5%;
+            }
+            .form-control {
+                @include info-form(100%, $sp-1 $sp-8, 50px);
+                &:focus {
+                    @include focus-form;
+                }
+            }
+            @include large{
+                i{
+                    left:3%;
+                }
+            }
+            @include medium{
+                i{
+                    left:4%;
+                }
+            }
+        }
+
+        .form_message {
+            @extend .form-input;
+            i {
+                left: 5%;
+                top: 15%;
+            }
+            textarea {
+                max-height: 120px;
+                width: 100%;
+                @include info-form(80px, $sp-3 $sp-8, 20px);
+                &::placeholder {
+                    font-size: $fs-0 + 2px;
+                }
+                &:focus {
+                    @include focus-form;
+                }
+            }
+            @include large{
+                i{
+                    left:3%;
+                }
+            }
+            @include medium{
+                i{
+                    left:4%;
+                }
+            }
+        }
+    }
+
+    .form-button {
+        button {
+            @include button($c-white, $c-pink, $sp-2 $sp-10, $c-pink, 0 0 0 3em $c-pink inset);
+            font-size: $fs-1;
+            font-weight: $fw-2;
+            @include transition;
+            &:hover {
+                box-shadow: 0 0 0 1px #b61984 inset;
+            }
+        }
+    }
+    .form-background {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+@keyframes Amination-form {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

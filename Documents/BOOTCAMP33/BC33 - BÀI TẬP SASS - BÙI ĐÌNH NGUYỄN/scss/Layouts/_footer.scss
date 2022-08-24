@@ -1,0 +1,94 @@
+.footer {
+    padding: $sp-11 0;
+    background-image: url(../img/footer_background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .footer_item {
+        padding: 0 $sp-6;
+        width: 100%;
+        h1 {
+            @include text($c-white, $fs-4, $fw-bold);
+            padding-bottom: $sp-5;
+        }
+        p {
+            @include text($c-white, $fs-1, $fw-normal);
+            margin-bottom: $sp-1;
+            i {
+                padding-right: $sp-1;
+            }
+        }
+        .footer_icons {
+            margin-top: $sp-4;
+            i {
+                @include icons($fs-1, $c-white, 0 $sp-1, $c-black-1);
+            }
+        }
+        ul {
+            li {
+                color: $c-white;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                list-style: none;
+                line-height: 1;
+                padding-bottom: $sp-2;
+                a {
+                    text-decoration: none;
+                    @include text($c-white, $fs-1, $fw-1);
+                    @include transition;
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+            }
+            li + li {
+                padding-top: $sp-2;
+            }
+        }
+        input {
+            background-color: transparent;
+            color: $c-white;
+            @include transition;
+            @include info-form(100%, $sp-2 $sp-6, 50px);
+
+            &::placeholder {
+                color: $c-white;
+                text-align: center;
+            }
+            &:focus {
+                border: 1px solid $c-white-1;
+            }
+        }
+        button {
+            margin-top: $sp-1;
+            width: 100%;
+            text-align: center;
+            @include transition;
+            @include button($c-black-0, $c-white-1, $sp-2 $sp-10, $c-white-1, 0 0 0 3em $c-white inset);
+            &:hover {
+                box-shadow: 0 0 0 1px $c-white inset;
+            }
+            @media screen and (min-width: 992px) and(max-width:1200px) {
+                padding: $sp-2 $sp-7;
+                font-size: $fs-1;
+            }
+        }
+        @include small {
+            margin-bottom: $sp-5;
+            h1 {
+                font-size: $fs-4;
+                padding-bottom: $sp-3;
+            }
+            p {
+                font-size: $fs-1;
+            }
+            ul > li {
+                padding-bottom: $sp-1;
+            }
+        }
+    }
+    @for $i from 1 to 5 {
+        .footer_item-#{$i} {
+            animation-delay: 0.2s * $i;
+        }
+    }
+}
