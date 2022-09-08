@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .text {
+        color: yellow;
+        background-color: red;
+      }
+      .tab-pane {
+        display: none;
+      }
+      .show {
+        display: block;
+      }
+      .active {
+        background-color: green;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="txtUsername" type="text " placeholder="Username" />
+    <input id="txtPassword" type="password" placeholder="password" />
+    <button onclick="setdefaultAccount()">mặc định</button>
+    <button onclick="login()">ĐĂNG NHẬP</button>
+
+    <h1 id="title">Di choi khong</h1>
+    <button onmouseenter="changetext2()">có</button>
+    <button onclick="changetext()">không</button>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div>
+      <!--EVENT : đại diện cho sự kiện vừa diễn ra-->
+      <button
+        data-target="actionTab"
+        onclick="changeTab(event)"
+        id="action"
+        class="active"
+      >
+        Action
+      </button>
+      <button
+        data-target="romanticTab"
+        onclick="changeTab(event)"
+        id="romantic"
+      >
+        Romantic
+      </button>
+      <button data-target="fictionTab" onclick="changeTab(event)" id="fiction">
+        Fiction
+      </button>
+    </div>
+
+    <div>
+      <div id="actionTab" class="tab-pane show">
+        <h2>Thor</h2>
+        <h2>The Boys</h2>
+        <h2>civil</h2>
+      </div>
+      <div id="romanticTab" class="tab-pane">
+        <h2>Thor</h2>
+        <h2>The Boys</h2>
+        <h2>civil</h2>
+      </div>
+      <div id="fictionTab" class="tab-pane">
+        <h2>Thor</h2>
+        <h2>The Boys</h2>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div>
+      <h2>Tổng tiền thanh toán</h2>
+      <input id="totalPay" type="text" placeholder="Tổng tiền" />;
+    </div>
+    <p>Bạn muốn tip bao nhiêu?</p>
+
+    <select id="select">
+      <option>chọn để tip</option>
+      <option>5</option>
+
+      <option>10</option>
+      <option>15</option>
+      <option>20</option>
+      <option>30</option>
+    </select>
+    <p>Muốn share bao nhiêu người</p>
+    <input id="people" type="text" placeholder="Nhập số người" />người
+    <button onclick="calcTip()">TÍNH NÀO</button>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
